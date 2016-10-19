@@ -1,1 +1,1 @@
-# compsci-time
+# Website kinda
