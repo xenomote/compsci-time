@@ -1,0 +1,67 @@
+html {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    line-height: 1.5rem;
+
+    background-color: whitesmoke;
+    color: darkslategrey;
+
+    padding: 0;
+    margin: 0;
+
+    box-sizing: border-box;
+}
+
+h1 {
+    font-size: 2rem;
+    font-weight: 900;
+}
+
+p {
+    font-size: 1rem;
+    font-weight: 100;
+}
+
+nav {
+    background-color: black;
+    color: whitesmoke;
+
+    position: sticky;
+    top: 0;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+
+    padding: 0;
+    margin: 0;
+}
+
+nav a {
+    text-decoration: none;
+    color: whitesmoke;
+
+    transition: background-color 0.5s ease;
+
+    display: block;
+    
+    padding: 1rem;
+    margin: 0;
+}
+
+nav a:hover {
+    background-color: grey;
+    transition: background-color 0s;
+}
+
+main {
+    max-width: 70ch;
+
+    margin: 0 auto;
+    padding: 0;
+}
