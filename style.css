@@ -1,10 +1,15 @@
+:root {
+    --title-font: georgia, serif;
+    --body-font: arial, sans-serif;
+}
+
 html {
     padding: 0;
     margin: 0;
 }
 
 body {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: var(--body-font);
     line-height: 1.5rem;
 
     background-color: whitesmoke;
@@ -17,22 +22,28 @@ body {
 }
 
 h1 {
+    font-variant-caps: small-caps;
+    font-family: var(--title-font);
+    letter-spacing: 0.2ch;
     font-size: 2rem;
     font-weight: 900;
 }
 
 h2 {
+    font-family: var(--body-font);
+    letter-spacing: 0.2ch;
     font-size: 1.2rem;
-    font-weight: 700;
+    font-weight: 500;
 }
 
 p {
+    letter-spacing: 0.1ch;
     font-size: 1rem;
     font-weight: 100;
 }
 
 nav {
-    background-color: black;
+    background-image: linear-gradient(black, navy);
     color: whitesmoke;
 
     position: sticky;
@@ -48,10 +59,16 @@ nav ul {
 }
 
 nav a {
-    text-decoration: none;
-    color: whitesmoke;
+    font-variant-caps: all-small-caps;
+    font-weight: 100;
+    letter-spacing: 0.2ch;
 
-    transition: background-color 0.5s ease;
+    text-decoration: none;
+    color: white;
+
+    background-color: transparent;
+    backdrop-filter: none;
+    transition: backdrop-filter 0.5s ease;
 
     display: block;
     
@@ -60,12 +77,12 @@ nav a {
 }
 
 nav a:hover {
-    background-color: grey;
-    transition: background-color 0s;
+    backdrop-filter: brightness(400%);
+    transition: backdrop-filter 0s;
 }
 
 main {
-    max-width: 70ch;
+    max-width: 40rem;
 
     margin: 0 auto;
     padding: 0;
