@@ -1,15 +1,19 @@
 :root {
-    --title-font: georgia, serif;
-    --body-font: arial, sans-serif;
+    font-family: arial, sans-serif;
 }
 
 html {
+    width: 100%;
+    height: 100%;
+
     padding: 0;
     margin: 0;
 }
 
 body {
-    font-family: var(--body-font);
+    width: 100%;
+    height: 100%;
+
     line-height: 1.5rem;
 
     background-color: whitesmoke;
@@ -17,21 +21,20 @@ body {
 
     padding: 0;
     margin: 0;
-
-    box-sizing: border-box;
+    
+    display: flex;
+    flex-flow: column;
 }
 
 h1 {
-    font-variant-caps: small-caps;
-    font-family: var(--title-font);
-    letter-spacing: 0.2ch;
+    font-variant-caps: all-small-caps;
+    letter-spacing: 0.0ch;
     font-size: 2rem;
     font-weight: 900;
 }
 
 h2 {
-    font-family: var(--body-font);
-    letter-spacing: 0.2ch;
+    letter-spacing: 0.1ch;
     font-size: 1.2rem;
     font-weight: 500;
 }
@@ -47,6 +50,7 @@ nav {
     color: whitesmoke;
 
     position: sticky;
+    z-index: 1;
     top: 0;
 }
 
@@ -84,6 +88,10 @@ nav a:hover {
 main {
     max-width: 40rem;
 
+    backdrop-filter: brightness(99%);
+
     margin: 0 auto;
-    padding: 0;
+    padding: 0 2rem;
+
+    flex-grow: 1;
 }
