@@ -1,52 +1,203 @@
-:root {
-    font-family: arial, sans-serif;
+/* 
+    import fonts
+*/
+
+@font-face
+{
+    font-family: karla;
+    font-display: swap;
+    font-weight: 1 1000;
+    font-style: normal;    
+    src: 
+        url('assets/fonts/karla/karla.woff2') format('woff2'),
+        url('assets/fonts/karla/karla.woff') format('woff'),
+        url('assets/fonts/karla/karla.ttf') format('ttf');
 }
 
-html {
-    width: 100%;
-    height: 100%;
-
-    padding: 0;
-    margin: 0;
+@font-face
+{
+    font-family: inconsolata;
+    font-display: swap;
+    font-weight: 1 1000;
+    font-style: normal;
+    src:
+        url('assets/fonts/inconsolata/inconsolata.woff2') format('woff2'),
+        url('assets/fonts/inconsolata/inconsolata.woff') format('woff'),
+        url('assets/fonts/inconsolata/inconsolata.ttf') format('ttf');
 }
 
-body {
+/* 
+    define variables
+*/
+
+:root 
+{
+    --color-dark: hsla(0, 0%, 0%, 1);
+    --color-dark-off: hsla(0, 0%, 10%, 1);
+    --color-dark-pop: hsla(240, 100%, 25%, 1);
+    --color-dark-pop-off: hsla(240, 100%, 50%, 1);
+
+    --color-light: hsla(0, 0%, 100%, 1);
+    --color-light-off: hsla(0, 0%, 90%, 1);
+    --color-light-pop: hsla(37, 100%, 45%, 1);
+    --color-light-pop-off: hsla(37, 100%, 65%, 1);
+
+    --font-family-head: karla;
+    --font-family-body: inconsolata;
+
+    --font-size-0: clamp(1.13rem, calc(1.08rem + 0.22vw), 1.25rem);
+    --font-size-1: clamp(1.27rem, calc(1.16rem + 0.52vw), 1.56rem);
+    --font-size-2: clamp(1.42rem, calc(1.24rem + 0.92vw), 1.95rem);
+    --font-size-3: clamp(1.60rem, calc(1.31rem + 1.46vw), 2.44rem);
+    --font-size-4: clamp(1.80rem, calc(1.37rem + 2.17vw), 3.05rem);
+    --font-size-5: clamp(2.03rem, calc(1.41rem + 3.11vw), 3.82rem);
+
+    --font-color-head: var(--color-dark);
+    --font-color-body: var(--color-dark-off);
+
+    --background-color-body: var(--color-light);
+    --background-color-main: var(--color-light-off);
+
+    --link-color: var(--color-light-pop);
+    --link-color-visited: var(--color-light-pop-off);
+}
+
+@media (prefers-color-scheme: dark) 
+{
+    :root
+    {
+        --font-color-head: var(--color-light);
+        --font-color-body: var(--color-light-off);
+
+        --background-color-body: var(--color-dark);
+        --background-color-main: var(--color-dark-off);
+
+        --link-color: var(--color-dark-pop-off);
+        --link-color-visited: var(--color-dark-pop);
+    }
+}
+
+/* 
+    assign base font styles, sizes and colors
+*/
+
+html
+{
+    color: var(--font-color-body);
+
+    font-family: var(--font-family-body);
+    font-weight: normal;
+
+    letter-spacing: 0.15em;
+    word-spacing: -0.1em;
+    line-height: 1.5em;
+
+    font-size: var(--font-size-0);
+}
+
+h1, h2, h3, h4, h5 
+{
+    color: var(--font-color-head);
+
+    font-family: var(--font-family-head);
+    font-weight: bold;
+
+    letter-spacing: -0.05em;
+    word-spacing: 0.1em;
+    line-height: 1em;
+
+    padding-bottom: 0.5em;
+}
+
+h1
+{
+    font-size: var(--font-size-5);
+}
+
+h2
+{
+    font-size: var(--font-size-4);
+}
+
+h3
+{
+    font-size: var(--font-size-3);
+}
+
+h4
+{
+    font-size: var(--font-size-2);
+}
+
+h5
+{
+    font-size: var(--font-size-1);
+}
+
+/* 
+    assign base padding, margin and fill
+*/
+
+* 
+{
+    padding: 0;
+    margin: 0; 
+}
+
+html, body
+{
     width: 100%;
     height: 100%;
+}
 
-    line-height: 1.5rem;
+ul, ol
+{
+    padding-left: 1.5em;
+}
 
-    background-color: whitesmoke;
-    color: darkslategrey;
 
-    padding: 0;
-    margin: 0;
+body
+{
+    background-color: var(--background-color-body);
     
     display: flex;
     flex-flow: column;
 }
 
-h1 {
-    font-variant-caps: all-small-caps;
-    letter-spacing: 0.0ch;
-    font-size: 2rem;
-    font-weight: 900;
+main
+{
+    background: linear-gradient(to right, transparent, var(--background-color-main) 2rem calc(100% - 2rem), transparent);
+    max-width: 90ch;
+
+    margin: 0 auto;
+    padding: 2rem 4rem 0;
+
+    flex-grow: 1;
 }
 
-h2 {
-    letter-spacing: 0.1ch;
-    font-size: 1.2rem;
-    font-weight: 500;
+a
+{
+    text-decoration: none;
+    color: var(--link-color);
 }
 
-p {
-    letter-spacing: 0.1ch;
-    font-size: 1rem;
-    font-weight: 100;
+a:visited
+{
+    color: var(--link-color-visited);
 }
 
-nav {
-    background-image: linear-gradient(black, navy);
+a:hover
+{
+    text-decoration: underline;
+}
+
+/* 
+    navigation bar
+*/
+
+nav
+{
+    background-image: linear-gradient(var(--color-dark), var(--color-dark-pop));
     color: whitesmoke;
 
     position: sticky;
@@ -54,21 +205,21 @@ nav {
     top: 0;
 }
 
-nav ul {
+nav ul
+{
+    padding: 0;
     list-style: none;
     display: flex;
-
-    padding: 0;
-    margin: 0;
 }
 
-nav a {
+nav a
+{
     font-variant-caps: all-small-caps;
     font-weight: 100;
     letter-spacing: 0.2ch;
 
     text-decoration: none;
-    color: white;
+    color: var(--color-light);
 
     background-color: transparent;
     backdrop-filter: none;
@@ -77,21 +228,14 @@ nav a {
     display: block;
     
     padding: 1rem;
-    margin: 0;
 }
 
-nav a:hover {
+nav a:hover
+{
     backdrop-filter: brightness(400%);
     transition: backdrop-filter 0s;
 }
 
-main {
-    max-width: 40rem;
-
-    backdrop-filter: brightness(99%);
-
-    margin: 0 auto;
-    padding: 0 2rem;
-
-    flex-grow: 1;
+nav a:visited {
+    color: var(--color-light);
 }
