@@ -59,8 +59,8 @@
     --background-color-body: var(--color-light);
     --background-color-main: var(--color-light-off);
 
-    --link-color: var(--color-light-pop);
-    --link-color-visited: var(--color-light-pop-off);
+    --link-color: var(--color-dark-pop-off);
+    --link-color-visited: var(--color-dark-pop);
 }
 
 @media (prefers-color-scheme: dark) 
@@ -74,8 +74,10 @@
         --background-color-body: var(--color-dark);
         --background-color-main: var(--color-dark-off);
 
-        --link-color: var(--color-dark-pop-off);
-        --link-color-visited: var(--color-dark-pop);
+
+
+        --link-color: var(--color-light-pop-off);
+        --link-color-visited: var(--color-light-pop);
     }
 }
 
