@@ -40,7 +40,7 @@
     --color-light: hsla(0, 0%, 100%, 1);
     --color-light-off: hsla(0, 0%, 90%, 1);
     --color-light-pop: hsla(37, 100%, 45%, 1);
-    --color-light-pop-off: hsla(37, 100%, 65%, 1);
+    --color-light-pop-off: hsla(37, 100%, 70%, 1);
 
     --font-family-head: karla;
     --font-family-body: inconsolata;
@@ -53,6 +53,7 @@
     --font-size-5: clamp(2.03rem, calc(1.41rem + 3.11vw), 3.82rem);
 
     --font-color-head: var(--color-dark);
+    --font-color-head-pop: var(--color-dark-pop);
     --font-color-body: var(--color-dark-off);
 
     --background-color-body: var(--color-light);
@@ -67,6 +68,7 @@
     :root
     {
         --font-color-head: var(--color-light);
+        --font-color-head-pop: var(--color-light-pop-off);
         --font-color-body: var(--color-light-off);
 
         --background-color-body: var(--color-dark);
@@ -86,52 +88,38 @@ html
     color: var(--font-color-body);
 
     font-family: var(--font-family-body);
+    font-size: var(--font-size-0);
     font-weight: normal;
 
     letter-spacing: 0.15em;
     word-spacing: -0.1em;
     line-height: 1.5em;
-
-    font-size: var(--font-size-0);
 }
 
 h1, h2, h3, h4, h5 
 {
-    color: var(--font-color-head);
+    color: transparent;
 
     font-family: var(--font-family-head);
     font-weight: bold;
 
     letter-spacing: -0.05em;
     word-spacing: 0.1em;
-    line-height: 1em;
+    line-height: 2ex;
 
+    background: linear-gradient(to bottom, var(--font-color-head) 0, var(--font-color-head-pop) 2ex 2ex);
+    background-clip: text;
+}
+
+h1 { font-size: var(--font-size-5) }
+h2 { font-size: var(--font-size-4) }
+h3 { font-size: var(--font-size-3) }
+h4 { font-size: var(--font-size-2) }
+h5 { font-size: var(--font-size-1) }
+
+h1, h2, h3, h4, h5, p
+{
     padding-bottom: 0.5em;
-}
-
-h1
-{
-    font-size: var(--font-size-5);
-}
-
-h2
-{
-    font-size: var(--font-size-4);
-}
-
-h3
-{
-    font-size: var(--font-size-3);
-}
-
-h4
-{
-    font-size: var(--font-size-2);
-}
-
-h5
-{
-    font-size: var(--font-size-1);
 }
 
 /* 
